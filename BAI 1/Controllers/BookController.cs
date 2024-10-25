@@ -33,7 +33,7 @@ namespace BAI_1.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+       // [Authorize]
         public async Task<IActionResult> AddNewBook(BookModel model)
         {
             try
@@ -49,7 +49,7 @@ namespace BAI_1.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize]
+      //  [Authorize]
         public async Task<IActionResult> UpdateBook(int id, BookModel model)
         {
 
