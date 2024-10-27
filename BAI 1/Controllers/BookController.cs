@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BAI_1.Data;
-using BAI_1.Hepper;
 using BAI_1.Models;
 using BAI_1.Repository;
 using Microsoft.AspNetCore.Authorization;
@@ -21,7 +20,6 @@ namespace BAI_1.Controllers
         }
 
         [HttpGet]
-        //[Authorize(Roles = AppRole.Customer)]
         public async Task<IActionResult> GetAllBook()
         {
             try
@@ -35,7 +33,7 @@ namespace BAI_1.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = AppRole.Admin)]
+        [Authorize]
         public async Task<IActionResult> AddNewBook(BookModel model)
         {
             try
@@ -51,7 +49,7 @@ namespace BAI_1.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles =AppRole.Admin)]
+        [Authorize]
         public async Task<IActionResult> UpdateBook(int id, BookModel model)
         {
 
@@ -104,7 +102,6 @@ namespace BAI_1.Controllers
              }
          
         [HttpGet("{id}")]
-        [Authorize(Roles = AppRole.Customer)]
         public async Task<IActionResult> GetBookById(int id)
         {
             try

@@ -17,7 +17,5 @@ namespace BAI_1.Models
 
         [Required]
         public string? ConfirmPassword { get; set; }
-
-        public string? Role { get; set; }
     }
 }

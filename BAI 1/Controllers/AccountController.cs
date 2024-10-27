@@ -16,7 +16,7 @@ namespace BAI_1.Controllers
         {
             this.res = res;
         }
-        
+
         [HttpPost("signUp")]
 
         public async Task<IActionResult> Register(SignnUpModel model)
@@ -26,7 +26,7 @@ namespace BAI_1.Controllers
             {
                 return Ok(result.Succeeded);
             }
-            return StatusCode(500);
+            return Unauthorized();
         }
 
         [HttpPost("signIn")]
@@ -34,7 +34,7 @@ namespace BAI_1.Controllers
         {
             try
             {
-                var result = await res.SignInAsync(model);
+                var result = await res.SignInAsaync(model);
 
                 if (string.IsNullOrEmpty(result))
                 {
